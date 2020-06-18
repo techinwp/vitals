@@ -222,11 +222,11 @@ if ( ! class_exists( 'Vitals' ) ) :
 		 * @return void
 		 */
 		public function scripts() {
-			global $storefront_version;
+			global $vitals_version;
 			/**
 			 * Styles
 			 */
-			wp_enqueue_style( 'storefront-style', get_template_directory_uri() . '/style.css', '', $storefront_version );
+			wp_enqueue_style( 'vitals-style', get_template_directory_uri() . '/style.css', '', $vitals_version );
 
 			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 				wp_enqueue_script( 'comment-reply' );

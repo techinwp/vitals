@@ -38,7 +38,8 @@ module.exports = function( grunt ) {
 				configFile: '.stylelintrc'
 			},
 			all: [
-				'assets/css/**/*.scss'
+				'assets/css/**/*.scss',
+				'!assets/css/sass/vendors/**/*.scss'
 			]
 		},
 

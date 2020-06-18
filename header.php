@@ -55,3 +55,4 @@
 
 		<?php
 		do_action( 'vitals_content_top' );
+		
