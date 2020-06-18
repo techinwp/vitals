@@ -1,13 +1,13 @@
 <?php
 /**
- * vitals functions and definitions
+ * Vitals functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package vitals
  */
 
-$theme              = wp_get_theme( 'vitals' );
+$theme          = wp_get_theme( 'vitals' );
 $vitals_version = $theme['Version'];
 
 /**

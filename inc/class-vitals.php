@@ -3,7 +3,6 @@
  * Vitals Class
  *
  * @since    1.0.0
- * @version  1.0
  * @package  vitals
  */
 
@@ -12,7 +11,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'Vitals' ) ) :
+
+	/**
+	 * Vitals Class
+	 * 
+	 * @version  1.0
+	 */
 	class Vitals {
+
 		/**
 		 * Setup class.
 		 *
@@ -42,7 +48,7 @@ if ( ! class_exists( 'Vitals' ) ) :
 			 */
 			add_theme_support( 'automatic-feed-links' );
 
-			/*
+			/**
 			 * Enable support for Post Thumbnails on posts and pages.
 			 *
 			 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#Post_Thumbnails
@@ -53,8 +59,10 @@ if ( ! class_exists( 'Vitals' ) ) :
 			 * Enable support for site logo.
 			 */
 			add_theme_support(
-				'custom-logo', apply_filters(
-					'vitals_custom_logo_args', array(
+				'custom-logo', 
+				apply_filters(
+					'vitals_custom_logo_args', 
+					array(
 						'height'      => 110,
 						'width'       => 470,
 						'flex-width'  => true,
@@ -68,9 +76,10 @@ if ( ! class_exists( 'Vitals' ) ) :
 			 */
 			register_nav_menus(
 				apply_filters(
-					'vitals_register_nav_menus', array(
-						'primary'   => __( 'Primary Menu', 'vitals' ),
-						'footer' => __( 'Footer Menu', 'vitals' ),
+					'vitals_register_nav_menus', 
+					array(
+						'primary' => __( 'Primary Menu', 'vitals' ),
+						'footer'  => __( 'Footer Menu', 'vitals' ),
 					)
 				)
 			);
@@ -80,8 +89,10 @@ if ( ! class_exists( 'Vitals' ) ) :
 			 * to output valid HTML5.
 			 */
 			add_theme_support(
-				'html5', apply_filters(
-					'vitals_html5_args', array(
+				'html5', 
+				apply_filters(
+					'vitals_html5_args', 
+					array(
 						'search-form',
 						'comment-form',
 						'comment-list',
@@ -98,8 +109,10 @@ if ( ! class_exists( 'Vitals' ) ) :
 			 * Setup the WordPress core custom background feature.
 			 */
 			add_theme_support(
-				'custom-background', apply_filters(
-					'vitals_custom_background_args', array(
+				'custom-background', 
+				apply_filters(
+					'vitals_custom_background_args', 
+					array(
 						'default-color' => apply_filters( 'vitals_default_background_color', 'ffffff' ),
 						'default-image' => '',
 					)
@@ -129,7 +142,7 @@ if ( ! class_exists( 'Vitals' ) ) :
 		 * @link https://codex.wordpress.org/Function_Reference/register_sidebar
 		 * @return  void
 		 */
-		public function widgets_init(){
+		public function widgets_init() {
 			$sidebar_args['sidebar'] = array(
 				'name'        => __( 'Sidebar', 'vitals' ),
 				'id'          => 'sidebar-1',
@@ -226,7 +239,7 @@ if ( ! class_exists( 'Vitals' ) ) :
 		 * @param array $classes Classes for the body element.
 		 * @return array
 		 */
-		public function body_classes( $classes ){
+		public function body_classes( $classes ) {
 			// Adds a class to blogs with more than 1 published author.
 			if ( is_multi_author() ) {
 				$classes[] = 'group-blog';
