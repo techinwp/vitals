@@ -31,3 +31,6 @@ config.codekit
 
 # Composer
 /vendor
+
+#composer lock
+composer.lock
