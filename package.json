@@ -1,0 +1,46 @@
+{
+  "name": "vitals",
+  "title": "vitals",
+  "version": "2.5.7",
+  "homepage": "http://woocommerce.com/vitals/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/techinwp/vitals.git"
+  },
+  "scripts": {
+    "build": "grunt",
+    "css": "grunt css",
+    "watch": "grunt watch",
+    "deploy": "grunt deploy"
+  },
+  "license": "GPL-2.0+",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "@babel/core": "7.10.2",
+    "@wordpress/babel-preset-default": "3.0.2",
+    "autoprefixer": "9.8.0",
+    "bourbon": "5.1.0",
+    "grunt": "1.1.0",
+    "grunt-babel": "8.0.0",
+    "grunt-checktextdomain": "1.0.1",
+    "grunt-contrib-compress": "1.6.0",
+    "grunt-contrib-copy": "1.0.0",
+    "grunt-contrib-cssmin": "3.0.0",
+    "grunt-contrib-jshint": "2.1.0",
+    "grunt-contrib-uglify": "4.0.1",
+    "grunt-contrib-watch": "1.1.0",
+    "grunt-postcss": "0.9.0",
+    "grunt-rtlcss": "2.0.2",
+    "grunt-sass": "3.1.0",
+    "grunt-stylelint": "0.15.0",
+    "grunt-wp-i18n": "1.0.3",
+    "node-sass": "4.14.1",
+    "stylelint": "9.10.1",
+    "susy": "2.2.14"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.1.0"
+  },
+  "dependencies": {}
+}
