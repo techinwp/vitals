@@ -1,47 +1,35 @@
 {
-  "name": "techinwp/vitals",
-  "description": "Vistals is a lightweight and flexible WordPress theme, designed and built by the team at TechinWP to help you make the most profitable from SEO. It's available to download for free from the WordPress theme repository.",
-  "homepage": "https://techinwp.com/",
-  "type": "wordpress-theme",
-  "license": "GPL-2.0+",
-  "require": {
-    "composer/installers": "1.9.0"
-  },
-  "require-dev": {
-    "squizlabs/php_codesniffer": "*",
-    "wp-coding-standards/wpcs": "0.14.1",
-    "phpunit/phpunit": "6.5.14",
-    "wimg/php-compatibility": "8.2.0",
-    "dealerdirect/phpcodesniffer-composer-installer": "0.6.2"
-  },
-  "scripts": {
-    "pre-update-cmd": [
-      "WooCommerce\\GitHooks\\Hooks::preHooks"
+    "name": "automattic/underscores",
+    "type": "wordpress-theme",
+    "description": "Hi. I'm a starter theme called _s, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.",
+    "keywords": [
+        "WordPress",
+        "Themes"
     ],
-    "pre-install-cmd": [
-      "WooCommerce\\GitHooks\\Hooks::preHooks"
+    "homepage": "https://github.com/Automattic/_s",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Contributors",
+            "homepage": "https://github.com/Automattic/_s/graphs/contributors"
+        }
     ],
-    "post-install-cmd": [
-      "WooCommerce\\GitHooks\\Hooks::postHooks"
-    ],
-    "post-update-cmd": [
-      "WooCommerce\\GitHooks\\Hooks::postHooks"
-    ],
-    "test": [
-      "phpunit"
-    ],
-    "phpcs": [
-      "phpcs -s -p"
-    ],
-    "phpcbf": [
-      "phpcbf -p"
-    ]
-  },
-  "extra": {
-    "scripts-description": {
-      "test": "Run unit tests",
-      "phpcs": "Analyze code against the WordPress coding standards with PHP_CodeSniffer",
-      "phpcbf": "Fix coding standards warnings/errors automatically with PHP Code Beautifier"
+    "require": {
+        "php": ">=5.6"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2",
+        "wptrt/wpthemereview": "^0.2.1",
+        "php-parallel-lint/php-parallel-lint": "^1.2.0",
+        "wp-cli/i18n-command": "^2.2"
+    },
+    "scripts": {
+        "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
+        "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor .",
+        "make-pot": "wp i18n make-pot . languages/_s.pot"
+    },
+    "support": {
+        "issues": "https://github.com/Automattic/_s/issues",
+        "source": "https://github.com/Automattic/_s"
     }
-  }
 }
