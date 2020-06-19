@@ -5,15 +5,25 @@
  * @package vitals
  */
 
-if ( ! function_exists( 'vitals_header_container' ) ) {
-	function vitals_header_container() {
+if ( ! function_exists( 'vitals_open_container' ) ) {
+	/**
+	 * Header opens containter
+	 * 
+	 * @return void
+	 */
+	function vitals_open_container() {
 		echo '<div class="container">';
 	}
 }
 
-if ( ! function_exists( 'vitals_header_container_close' ) ) {
-	function vitals_header_container_close() {
-		echo '</div>';
+if ( ! function_exists( 'vitals_close_container' ) ) {
+	/**
+	 * Header closes container
+	 * 
+	 * @return void
+	 */
+	function vitals_close_container() {
+		echo '</div><!-- .container -->';
 	}
 }
 
@@ -60,5 +70,76 @@ if ( ! function_exists( 'vitals_site_title_or_logo' ) ) {
 		}
 		// WPCS: XSS ok.
 		echo $html; 
+	}
+}
+
+if ( ! function_exists( 'vitals_post_header' ) ) {
+	/**
+	 * Display the post header with a link to the single post
+	 *
+	 * @since 1.0.0
+	 */
+	function vitals_post_header() {
+		?>
+		<header class="entry-header">
+		<?php
+
+		/**
+		 * Functions hooked in to vitals_post_header_before action.
+		 *
+		 * @hooked vitals_post_meta - 10
+		 */
+		do_action( 'vitals_post_header_before' );
+
+		if ( is_single() ) {
+			the_title( '<h1 class="entry-title">', '</h1>' );
+		} else {
+			the_title( sprintf( '<h2 class="alpha entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+		}
+
+		do_action( 'vitals_post_header_after' );
+		?>
+		</header><!-- .entry-header -->
+		<?php
+	}
+}
+
+if ( ! function_exists( 'vitals_post_content' ) ) {
+	/**
+	 * Display the post content with a link to the single post
+	 *
+	 * @since 1.0.0
+	 */
+	function vitals_post_content() {
+		?>
+		<div class="entry-content">
+		<?php
+
+		/**
+		 * Functions hooked in to vitals_post_content_before action.
+		 *
+		 * @hooked vitals_post_thumbnail - 10
+		 */
+		do_action( 'vitals_post_content_before' );
+
+		the_content(
+			sprintf(
+				/* translators: %s: post title */
+				__( 'Continue reading %s', 'vitals' ),
+				'<span class="screen-reader-text">' . get_the_title() . '</span>'
+			)
+		);
+
+		do_action( 'vitals_post_content_after' );
+
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . __( 'Pages:', 'vitals' ),
+				'after'  => '</div>',
+			)
+		);
+		?>
+		</div><!-- .entry-content -->
+		<?php
 	}
 }

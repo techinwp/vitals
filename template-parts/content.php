@@ -2,7 +2,7 @@
 /**
  * Template used to display post content.
  *
- * @package storefront
+ * @package vitals
  */
 
 ?>
@@ -11,12 +11,12 @@
 
 	<?php
 	/**
-	 * Functions hooked in to storefront_loop_post action.
+	 * Functions hooked in to vitals_loop_post action.
 	 *
-	 * @hooked storefront_post_header          - 10
-	 * @hooked storefront_post_content         - 30
+	 * @hooked vitals_post_header          - 10
+	 * @hooked vitals_post_content         - 30
 	 */
-	do_action( 'storefront_loop_post' );
+	do_action( 'vitals_loop_post' );
 	?>
 
 </article><!-- #post-## -->

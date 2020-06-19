@@ -27,7 +27,7 @@
 			do_action( 'vitals_footer' );
 			?>
 
-		</div><!-- .col-full -->
+		</div><!-- .container -->
 	</footer><!-- #colophon -->
 
 	<?php do_action( 'vitals_after_footer' ); ?>

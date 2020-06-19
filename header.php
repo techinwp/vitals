@@ -51,7 +51,7 @@
 	?>
 
 	<div id="content" class="site-content" tabindex="-1">
-		<div class="col-full">
+		<div class="container">
 
 		<?php
 		do_action( 'vitals_content_top' );

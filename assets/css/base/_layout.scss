@@ -1,0 +1,11 @@
+@include susy-media($desktop) {
+	.container {
+		@include clearfix;
+		@include container($container-width);
+		padding: 0 ms(5);
+		box-sizing: content-box;
+	}
+	.entry-content {
+		font-size: 2.1rem;
+	}
+}
