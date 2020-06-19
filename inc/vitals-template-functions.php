@@ -83,20 +83,18 @@ if ( ! function_exists( 'vitals_post_header' ) ) {
 		?>
 		<header class="entry-header">
 		<?php
-
-		/**
-		 * Functions hooked in to vitals_post_header_before action.
-		 *
-		 * @hooked vitals_post_meta - 10
-		 */
 		do_action( 'vitals_post_header_before' );
 
 		if ( is_single() ) {
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		} else {
-			the_title( sprintf( '<h2 class="alpha entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+			the_title( sprintf( '<h2 class="entry-title heading-size-1"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 		}
-
+		/**
+		 * Functions hooked in to vitals_post_header_before action.
+		 *
+		 * @hooked vitals_post_meta - 10
+		 */
 		do_action( 'vitals_post_header_after' );
 		?>
 		</header><!-- .entry-header -->
@@ -141,5 +139,53 @@ if ( ! function_exists( 'vitals_post_content' ) ) {
 		?>
 		</div><!-- .entry-content -->
 		<?php
+	}
+}
+
+if ( ! function_exists( 'vitals_top_post_meta' ) ) {
+	/**
+	 * Render post meta before content
+	 * 
+	 * @return void
+	 */
+	function vitals_top_post_meta() {
+		global $post;
+		$post_meta = apply_filters( 'vitals_post_meta_top', array( 'author', 'date', 'comment', 'sticky' ) );
+		if ( ! empty( $post_meta ) ) {
+			?>
+			<div class="post-meta-wrapper post-meta-top">
+				<ul class="post-meta">
+				<?php
+					vitals_post_meta( $post->ID, $post_meta );
+				?>
+				</ul>
+			</div>
+			<?php
+		}
+	}
+}
+
+if ( ! function_exists( 'vitals_bottom_post_meta' ) ) {
+	/**
+	 * Render post meta after content
+	 * 
+	 * @return void
+	 */
+	function vitals_bottom_post_meta() {
+		global $post;
+		$post_meta = apply_filters( 'vitals_post_meta_bottom', array( 'category', 'tag' ) );
+
+		if ( ! empty( $post_meta ) ) {
+			?>
+			<div class="post-meta-wrapper post-meta-bottom">
+				<ul class="post-meta">
+				<?php
+					vitals_post_meta( $post->ID, $post_meta );
+				?>
+				</ul>
+				<?php edit_post_link( __( 'Edit', 'vitals' ) ); ?>
+			</div>
+			<?php
+		}
 	}
 }

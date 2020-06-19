@@ -1,11 +1,21 @@
 @include susy-media($desktop) {
+	h1,
+	.heading-size-1,
+	h2.entry-title {
+		font-size: 6.4rem;
+	}
 	.container {
 		@include clearfix;
 		@include container($container-width);
 		padding: 0 ms(5);
 		box-sizing: content-box;
 	}
+
 	.entry-content {
 		font-size: 2.1rem;
+	}
+
+	.post-meta-wrapper {
+		margin-top: 3rem;
 	}
 }
