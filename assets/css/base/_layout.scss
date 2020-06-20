@@ -1,4 +1,17 @@
 @include susy-media($desktop) {
+	/**
+	 * Header
+	 */
+	.site-header {
+		.site-branding {
+			@include span(5 of 12);
+		}
+
+		.main-navigation {
+			@include span( last 7 of 12);
+		}
+	}
+
 	h1,
 	.heading-size-1,
 	h2.entry-title {

@@ -14,6 +14,7 @@
  */
 add_action( 'vitals_header', 'vitals_open_container', 0 );
 add_action( 'vitals_header', 'vitals_site_branding', 5 );
+add_action( 'vitals_header', 'vitals_primary_navigation', 10 );
 add_action( 'vitals_header', 'vitals_close_container', 21 );
 
 /**

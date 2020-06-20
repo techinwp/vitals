@@ -760,3 +760,129 @@ thead {
 th {
 	font-weight: 700;
 }
+
+/* -------------------------------------------------------------------------- */
+
+/* 4.	Site Header
+
+/* -------------------------------------------------------------------------- */
+.site-header {
+	background: #fff;
+	position: relative;
+}
+
+.header-titles {
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+
+	.site-title {
+		font-size: 2.4rem;
+		font-weight: 700;
+		margin: 1rem 0 0 2.4rem;
+
+		a {
+			color: #000;
+			display: block;
+			text-decoration: none;
+		}
+	}
+
+	.site-description {
+		margin: 1rem 0 0 2.4rem;
+		color: #6d6d6d;
+		font-size: 1.8rem;
+		font-weight: 500;
+	}
+}
+.primary-navigation {
+	.primary-menu {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-end;
+		list-style: none;
+		margin: 0;
+		li {
+			margin: 0;
+			border-left: 1px solid #fff;
+			text-decoration: none;
+			display: inline-block;
+			padding: 1rem;
+			position: relative;
+			transition-duration: 0.5s;
+
+			&:hover,
+			&:focus-within {
+				background: #1565c0;
+				cursor: pointer;
+				a {
+					color: #fff;
+					outline: none;
+				}
+			}
+
+			&:last-child {
+				border: 0;
+
+				ul {
+					right: 2rem;
+				}
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			ul {
+				visibility: hidden;
+				opacity: 0;
+				min-width: 7rem;
+				position: absolute;
+				transition: all 0.5s ease;
+				margin-top: 1rem;
+				margin-left: 0;
+				left: 0;
+				display: none;
+
+				li {
+					clear: both;
+					width: 100%;
+					border: 0;
+					background: #00bfff;
+				}
+			}
+			&:hover > ul,
+			&:focus-within > ul,
+			ul:hover,
+			ul:focus {
+				visibility: visible;
+				opacity: 1;
+				display: block;
+			}
+		}
+		.current-menu-item {
+			background: #1565c0;
+			a {
+				color:#fff;
+			}
+		}
+		// a {
+		// 	text-decoration: none;
+		// 	display: block;
+		// 	padding: 1rem;
+		// 	&:hover {
+		// 		background: #1565c0;
+		// 		color: #fff;
+		// 	}
+		// }
+		// .current-menu-item a {
+		// 	background: #1565c0;
+		// 	color: #fff;
+		// }
+	}
+}
+
+
+
+

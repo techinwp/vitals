@@ -58,7 +58,7 @@ if ( ! function_exists( 'vitals_site_title_or_logo' ) ) {
 		} else {
 			$tag = is_home() ? 'h1' : 'div';
 
-			$html = '<' . esc_attr( $tag ) . ' class="beta site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . esc_html( get_bloginfo( 'name' ) ) . '</a></' . esc_attr( $tag ) . '>';
+			$html = '<' . esc_attr( $tag ) . ' class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . esc_html( get_bloginfo( 'name' ) ) . '</a></' . esc_attr( $tag ) . '>';
 
 			if ( '' !== get_bloginfo( 'description' ) ) {
 				$html .= '<p class="site-description">' . esc_html( get_bloginfo( 'description', 'display' ) ) . '</p>';
@@ -69,7 +69,27 @@ if ( ! function_exists( 'vitals_site_title_or_logo' ) ) {
 			return $html;
 		}
 		// WPCS: XSS ok.
-		echo $html; 
+		echo '<div class="header-titles">' . $html . '</div>'; 
+	}
+}
+
+if ( ! function_exists( 'vitals_primary_navigation' ) ) {
+	function vitals_primary_navigation() {
+		?>
+		<div class="main-navigation">
+			<nav class="primary-navigation" role="navigation">
+			<?php
+				wp_nav_menu(
+					array(
+						'theme_location'  => 'primary',
+						'container'       => false,
+						'menu_class'      => 'primary-menu',
+					)
+				);
+			?>
+			</nav>
+		</div>
+		<?php
 	}
 }
 

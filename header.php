@@ -27,7 +27,7 @@
 <div id="page" class="hfeed site">
 	<?php do_action( 'vitals_before_header' ); ?>
 
-	<header id="masthead" class="site-header" role="banner" style="<?php vitals_header_styles(); ?>">
+	<header id="masthead" class="site-header" role="banner">
 
 		<?php
 		/**
