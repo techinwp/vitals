@@ -827,6 +827,7 @@ th {
 
 				ul {
 					right: 2rem;
+					left:auto;
 				}
 			}
 
@@ -837,7 +838,7 @@ th {
 			ul {
 				visibility: hidden;
 				opacity: 0;
-				min-width: 7rem;
+				min-width: 20rem;
 				position: absolute;
 				transition: all 0.5s ease;
 				margin-top: 1rem;
