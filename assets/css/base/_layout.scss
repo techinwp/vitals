@@ -32,3 +32,74 @@
 		margin-top: 3rem;
 	}
 }
+
+/** End $desktop */
+@include susy-media (max-width $handheld) {
+	.site-branding {
+		width: calc(100% - 5.8rem);
+
+		.site-description {
+			display: none;
+		}
+	}
+	.main-navigation {
+		.menu-icon {
+			display: inline-block;
+			margin-top: -4.5rem;
+		}
+
+		.primary-navigation {
+			display: none;
+
+			.primary-menu {
+				float: none;
+
+				.current-menu-item {
+					background: #1565c0;
+				}
+
+				li {
+					display: block;
+					width: 100%;
+					float: none;
+					border-bottom: 1px solid #fff;
+					border-left: 0;
+					background: #00bfff;
+					padding-left: 0;
+					padding-right: 0;
+
+					a {
+						padding: 0 2rem;
+						color: #fff;
+					}
+
+					> ul {
+						display: block;
+						visibility: visible;
+						position: relative;
+						opacity: 1;
+
+						li {
+							border-top: 1px solid #fff;
+							padding-left: 2rem;
+							a {
+								color: #fff;
+							}
+						}
+					}
+					&:last-child {
+						border: 0;
+
+						ul {
+							right: auto;
+							left:auto;
+						}
+					}
+				}
+			}
+		}
+		.menu-btn:checked ~ .primary-navigation {
+			display: block;
+		}
+	}
+}

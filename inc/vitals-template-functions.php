@@ -77,6 +77,8 @@ if ( ! function_exists( 'vitals_primary_navigation' ) ) {
 	function vitals_primary_navigation() {
 		?>
 		<div class="main-navigation">
+			<input class="menu-btn" type="checkbox" id="menu-btn" />
+  			<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
 			<nav class="primary-navigation" role="navigation">
 			<?php
 				wp_nav_menu(
